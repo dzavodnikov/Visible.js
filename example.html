@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>jQVisible Example</title>
+    
+    <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.jqvisible.js"></script>
+	<script language="javascript" type="text/javascript">
+    function hide() {
+        $('#container').toggle();
+    }
+    
+    $(document).ready(function() {
+        $('#my_tag').on('becameVisible', function() {
+            $('#status').text('Visible');
+        });
+      
+        $('#my_tag').on('becameUnvisible', function() {
+            $('#status').text('Unvisible');
+        });
+    });
+	</script>
+</head>
+<body>
+
+<button onclick="hide();">Hide/Show</button>
+
+<div id="container">
+    <h1 id="my_tag">Content</h1>
+</div>
+
+<p id="status">Empty</p>
+
+</body>
+</html>
