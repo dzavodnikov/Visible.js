@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Visible.js Example</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="Visible.js"></script>
+    <script type="text/javascript">
+    function toggle() {
+        $('#container').toggle();
+    }
+
+    function hide() {
+        $('#container').hide();
+    }
+
+    function show() {
+        $('#container').show();
+    }
+
+    $(document).ready(function() {
+        $('#myContent').on('becameVisible', function() {
+            $('#status').text('Visible');
+        });
+
+        $('#myContent').on('becameUnvisible', function() {
+            $('#status').text('Unvisible');
+        });
+    });
+    </script>
+</head>
+<body>
+
+<button onclick="toggle();">Toggle</button>
+
+<button onclick="hide();">Hide</button>
+
+<button onclick="show();">Show</button>
+
+Status: <span id="status">[Empty]</span>
+
+<hr />
+<div id="container">
+    <h3 id="myContent">This text will be hide or shown</h3>
+</div>
+<hr />
+
+</body>
+</html>
